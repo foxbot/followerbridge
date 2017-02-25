@@ -2,6 +2,10 @@
 
 A small tool to offer perks for your [twitch.tv](https://twitch.tv) followers on [Discord](https://discordapp.com)
 
+### Example
+
+A sample is running on [followerbridge.foxbot.me](https://followerbridge.foxbot.me)
+
 ### Requirements
 - Python 3
 - Flask
@@ -17,7 +21,7 @@ SERVER_NAME = 'localhost:80' # set a port
 DISCORD_CLIENT_ID = 'client ID of oauth application'
 DISCORD_SECRET_KEY = 'client secret of oauth application'
 DISCORD_BOT_TOKEN = 'token of bot account for application'
-REDIRECT_URI = 'redirect uri of application'
+REDIRECT_URI = 'redirect uri of application - https://my.website/discord' # domain/discord
 TWITCH_NAME = 'the name of your twitch account'
 TWITCH_API_KEY = 'a twitch oauth app api key'
 
