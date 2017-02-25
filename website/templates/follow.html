@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block body %}
+<section class="hero is-info is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title is-1"><b>sorry!</b></h1>
+      <h2 class="subtitle is-3">you aren't following <a href="https://twitch.tv/{{streamer}}">{{ streamer }}</a> on twitch!</h2>
+      <a class="button is-info" href="{{ url_for('main.index') }}">go back</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

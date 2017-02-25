@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block body %}
+<section class="hero is-danger is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title is-1"><b>sorry, that's an error</b></h1>
+      <h2 class="subtitle is-3">{{ desc }}</h2>
+      <a class="button is-danger" href="{{ url_for('main.index') }}">go back</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block body %}
+<section class="hero is-fullheight">
+  <div class="hero-body">
+    <div class="container has-text-centered is-medium">
+      <h1 class="title">followbridge</h1>
+      <h3 class="subtitle">connecting twitch followers for {{ streamer }}</h3>
+    </div>
+    <div class="container has-text-centered">
+      {% if linked %}
+        <h4>linked!</h4>
+      {% else %}
+      <a class="button is-primary" href="{{ url_for('main.login') }}">connect to discord</a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="hero-foot">
+    <footer class="footer">
+      <div class="container content has-text-centered">
+        <p><a href="{{ discord }}">join</a> {{ streamer }}'s discord server | followerbridge by <a href="https://github.com/foxbot/followerbridge">foxbot</a></p>
+      </div>
+    </footer>
+  </div>
+</section>
+{% endblock %}
