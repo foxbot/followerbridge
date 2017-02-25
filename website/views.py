@@ -49,7 +49,7 @@ def login():
 def callback():
 	state = session.get('oauth2_state')
 	if not state and request.values.get('error'):
-		return redirect(url_for('.index', _external=True))
+		return redirect(url_for('.index'))
 
 	with make_session(state=state) as discord:
 		token = discord.fetch_token(
@@ -69,13 +69,13 @@ def verify_twitch():
 	
 	following = is_following(username)
 	if following is None:
-		raise RequestRedirect(url_for('.twitch_error', _external=True))
+		raise RequestRedirect(url_for('.twitch_error'))
 	elif following is False:
-		raise RequestRedirect(url_for('.follow', _external=True))
+		raise RequestRedirect(url_for('.follow'))
 
 	role = add_role()
 	if role is None:
-		raise RequestRedirect(url_for('.discord_error', _external=True))
+		raise RequestRedirect(url_for('.discord_error'))
 
 	session['linked'] = True
-	raise RequestRedirect(url_for('.index', _external=True))
+	raise RequestRedirect(url_for('.index'))
